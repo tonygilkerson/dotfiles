@@ -19,22 +19,33 @@ colorize() {
     printf "${color_format}${target}${term_reset}" "$color"
 }
 
+
+
 build_ps1() {
     local readonly bold="\[$(tput bold)\]"
     local readonly gray="245"
+    local readonly blue="111"
 
     local readonly directory='\w'
     local readonly host='\h'
     local readonly user='\u'
+    local readonly cluster="$(kubectl config current-context)"
+    local readonly namespace="$(kubectl config view | kx="$(kubectl config current-context)" yq '.contexts[] | select(.context.cluster ==env(kx)) | .context.namespace' -)"
 
     local prompt=''
 
-    prompt="${user}@"
-    prompt="${prompt}${bold}$(colorize ${host}):"
-    prompt="${prompt}$(colorize $directory $gray)$ "
-    prompt="${prompt}${term_reset}"
+    # prompt="${user}@"
+    # prompt="${prompt}${bold}$(colorize ${host}):"
+    # prompt="${prompt}$(colorize $directory $gray)"
+    # prompt="${prompt}${term_reset}"
     
+    prompt="$(colorize $cluster $blue)"
+    prompt="${prompt}:$(colorize $namespace)"
+    prompt="(${prompt})"
+    prompt="${prompt}$(colorize $directory $gray)"
+    prompt="${prompt}${term_reset}$ "
     echo -n "${prompt}"
+
 }
 
 export PS1="$(build_ps1)"
