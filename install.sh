@@ -24,4 +24,5 @@ cat > ~/.bashrc <<- EOF
 [ -f ~/.bashrc.darwin ] && . ~/.bashrc.darwin
 EOF
 
+echo "Done! - to use 'source ~/.bashrc'"
 

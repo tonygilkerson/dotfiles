@@ -8,6 +8,7 @@ alias ls="ls -Gh"
 alias ll='ls -ltra'
 alias cc='clear;echo -n "Hi, "; whoami; echo " "'
 alias tx='tmux new -s aeg'
+alias cda='cd ~/act3-gitlab'
 
 # We use Bash in this household, and we ain't never gonna change, not
 # for nobody, no how. And for damn sure, not for no "Apple Computer, inc."

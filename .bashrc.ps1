@@ -26,7 +26,8 @@ build_ps1() {
     local readonly gray="245"
     local readonly blue="111"
 
-    local readonly directory='\w'
+    # local readonly directory='\w'
+    local readonly directory="$(pwd | sed "s|^$HOME|~|")"
     local readonly host='\h'
     local readonly user='\u'
     local readonly cluster="$(kubectl config current-context)"
@@ -39,13 +40,10 @@ build_ps1() {
     # prompt="${prompt}$(colorize $directory $gray)"
     # prompt="${prompt}${term_reset}"
     
-    prompt="$(colorize $cluster $blue)"
-    prompt="${prompt}:$(colorize $namespace)"
-    prompt="(${prompt})"
-    prompt="${prompt}$(colorize $directory $gray)"
-    prompt="${prompt}${term_reset}$ "
+    prompt="(${cluster}:${namespace})${directory}\$ "
+
     echo -n "${prompt}"
 
 }
 
-export PS1="$(build_ps1)"
+export PS1='$(build_ps1)'
