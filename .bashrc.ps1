@@ -23,10 +23,12 @@ build_ps1() {
     # prompt="${prompt}$(colorize $directory $gray)"
     # prompt="${prompt}${term_reset}"
     
-    prompt="[${startColor}${blue}${cluster}${endColor}:${yellow}${namespace}${endColor} ${ltGray}${directory}${endColor}]$ "
+    prompt="(${startColor}${blue}${cluster}${endColor}:${yellow}${namespace}${endColor}) ${ltGray}${directory}${endColor}$ "
 
-    echo -n "${prompt}"
+    # echo -n "${prompt}"
+    PS1="${prompt}"
 
 }
 
-export PS1="$(build_ps1)"
+# export PS1='$(build_ps1)'
+export PROMPT_COMMAND=build_ps1
