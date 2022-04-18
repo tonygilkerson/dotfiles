@@ -1,30 +1,13 @@
-[ -z "$term_reset" ] &&
-    readonly term_reset="\[$(tput sgr0)\]"
-
-get_color_for_host() {
-    local readonly unique_id=$(hostname -s | cksum | cut -f1 -d" ")
-    local readonly host_color=$(($(($unique_id % 130)) + 40))
-
-    echo "$host_color"
-}
-
-colorize() {
-    # Note: you want `tput setaf` to work so bad, but it just doesn't.
-    local readonly color_format="\[\033[38;5;%dm\]"
-
-    local readonly default_color="$(get_color_for_host)"
-    local readonly target="$1"
-    local readonly color="${2-$default_color}"
-
-    printf "${color_format}${target}${term_reset}" "$color"
-}
-
-
 
 build_ps1() {
     local readonly bold="\[$(tput bold)\]"
     local readonly gray="245"
-    local readonly blue="111"
+    local readonly blue="\e[0;34m"
+    local readonly cyan="\e[0;36m"
+    local readonly yellow="\e[0;33m"
+    local readonly ltPurple="\e[0;35m"
+    local readonly gray="\e[1;30m"
+    local readonly endColor="\e[m"
 
     # local readonly directory='\w'
     local readonly directory="$(pwd | sed "s|^$HOME|~|")"
@@ -40,10 +23,10 @@ build_ps1() {
     # prompt="${prompt}$(colorize $directory $gray)"
     # prompt="${prompt}${term_reset}"
     
-    prompt="(${cluster}:${namespace})${directory}\$ "
+    prompt="[${startColor}${blue}${cluster}${endColor}:${yellow}${namespace}${endColor} ${ltGray}${directory}${endColor}]$ "
 
     echo -n "${prompt}"
 
 }
 
-export PS1='$(build_ps1)'
+export PS1="$(build_ps1)"
