@@ -1,29 +1,34 @@
+#!/bin/bash
 
-build_ps1() {
-    local readonly bold="\[$(tput bold)\]"
-    local readonly gray="245"
-    local readonly blue="\e[0;34m"
-    local readonly cyan="\e[0;36m"
-    local readonly yellow="\e[0;33m"
-    local readonly ltPurple="\e[0;35m"
-    local readonly gray="\e[1;30m"
-    local readonly endColor="\e[m"
+build_ps1() 
+{
+    # local bold="\[$(tput bold)\]"
+    # local cyan="\[\e[0;36m\]"
+    # local  gray="\[\e[1;30m"
+    local ltPurple="\[\e[0;35m"
+    local  blue="\[\e[0;34m\]"
+    local  yellow="\[\e[0;33m\]"
+    local  endColor="\e[0m\]"
 
-    # local readonly directory='\w'
-    local readonly directory="$(pwd | sed "s|^$HOME|~|")"
-    local readonly host='\h'
-    local readonly user='\u'
-    local readonly cluster="$(kubectl config current-context)"
-    local readonly namespace="$(kubectl config view | kx="$(kubectl config current-context)" yq '.contexts[] | select(.context.cluster ==env(kx)) | select(.context.namespace != null) | .context.namespace' -)"
+    # local  directory='\w'
+    # local readonly host='\h'
+    # local readonly user='\u'
+    local  namespace
+    local  directory
+    local  cluster
 
-    local prompt=''
+    directory=$(pwd | sed "s|^$HOME|~|")
+    namespace="$(kubectl config view | kx="$(kubectl config current-context)" yq '.contexts[] | select(.context.cluster ==env(kx)) | select(.context.namespace != null) | .context.namespace' -)"
+    cluster="$(kubectl config current-context)"
+
+    local prompt=""
 
     # prompt="${user}@"
     # prompt="${prompt}${bold}$(colorize ${host}):"
     # prompt="${prompt}$(colorize $directory $gray)"
     # prompt="${prompt}${term_reset}"
     
-    prompt="(${startColor}${blue}${cluster}${endColor}:${yellow}${namespace}${endColor}) ${ltGray}${directory}${endColor}$ "
+    prompt="(${blue}${cluster}${endColor}:${yellow}${namespace}${endColor}) ${ltPurple}${directory}${endColor}$ "
 
     # echo -n "${prompt}"
     PS1="${prompt}"
