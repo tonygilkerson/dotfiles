@@ -14,7 +14,7 @@ build_ps1() {
     local readonly host='\h'
     local readonly user='\u'
     local readonly cluster="$(kubectl config current-context)"
-    local readonly namespace="$(kubectl config view | kx="$(kubectl config current-context)" yq '.contexts[] | select(.context.cluster ==env(kx)) | .context.namespace' -)"
+    local readonly namespace="$(kubectl config view | kx="$(kubectl config current-context)" yq '.contexts[] | select(.context.cluster ==env(kx)) | select(.context.namespace != null) | .context.namespace' -)"
 
     local prompt=''
 
