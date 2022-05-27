@@ -1,4 +1,0 @@
-if [ -d ~/Library/Android/sdk/platform-tools ]; then
-    export PATH="$PATH:~/Library/Android/sdk/platform-tools"
-fi
-

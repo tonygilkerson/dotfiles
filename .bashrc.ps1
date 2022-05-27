@@ -28,7 +28,8 @@ build_ps1()
     # prompt="${prompt}$(colorize $directory $gray)"
     # prompt="${prompt}${term_reset}"
     
-    prompt="(${blue}${cluster}${endColor}:${yellow}${namespace}${endColor}) ${ltPurple}${directory}${endColor}$ "
+    # prompt="(${blue}${cluster}${endColor}:${yellow}${namespace}${endColor}) ${ltPurple}${directory}${endColor}$ "
+    prompt="(${cluster}:${namespace}) ${directory}$ "
 
     # echo -n "${prompt}"
     PS1="${prompt}"

@@ -43,5 +43,6 @@ function kmerge() {
   KUBECONFIG=~/.kube/config:$1 kubectl config view --flatten > ~/.kube/mergedkub && mv ~/.kube/mergedkub ~/.kube/config
 }
 
+export KPT_FN_RUNTIME=podman
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
