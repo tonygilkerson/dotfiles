@@ -10,8 +10,10 @@ alias cc='clear;echo -n "Hi, "; whoami; echo " "'
 alias tx='tmux new -s aeg'
 alias cda='cd ~/act3-gitlab'
 
+#
 # We use Bash in this household, and we ain't never gonna change, not
 # for nobody, no how. And for damn sure, not for no "Apple Computer, inc."
+#
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 #
@@ -43,6 +45,26 @@ function kmerge() {
   KUBECONFIG=~/.kube/config:$1 kubectl config view --flatten > ~/.kube/mergedkub && mv ~/.kube/mergedkub ~/.kube/config
 }
 
+#
+# kpt
+#
 export KPT_FN_RUNTIME=podman
+
+#
+# Update path for krew plugins
+#
+export PATH="${PATH}:${HOME}/.krew/bin"
+
+#
+# Toolchain needed for TinyGo
+# ref: https://tinygo.org/docs/reference/microcontrollers/esp32-coreboard-v2/
+#      https://docs.espressif.com/projects/esp-idf/en/release-v3.0/get-started/macos-setup.html
+#
+export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin
+
+#
+# Go
+#
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
