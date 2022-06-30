@@ -18,7 +18,7 @@ build_ps1()
     local  cluster
 
     directory=$(pwd | sed "s|^$HOME|~|")
-    namespace="$(kubectl config view | kx="$(kubectl config current-context)" yq '.contexts[] | select(.context.cluster ==env(kx)) | select(.context.namespace != null) | .context.namespace' -)"
+    namespace="$(kubectl config view | kx="$(kubectl config current-context)" yq '.contexts[] | select(.name ==env(kx)) | select(.context.namespace != null) | .context.namespace' -)"
     cluster="$(kubectl config current-context)"
 
     local prompt=""
