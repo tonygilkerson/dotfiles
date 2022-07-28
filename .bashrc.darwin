@@ -84,3 +84,6 @@ if [ -f '/Users/tgilkerson/google-cloud-sdk/completion.bash.inc' ]; then . '/Use
 #  $ cargo install jwt-cli
 #  Then I could do stuff like `jwt decode $TOKEN`
 export PATH=$PATH:/Users/tgilkerson/.cargo/bin
+
+# see: https://kind.sigs.k8s.io/docs/user/rootless/
+export KIND_EXPERIMENTAL_PROVIDER=podman
