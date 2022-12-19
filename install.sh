@@ -10,7 +10,6 @@ if [ "$(uname)" == "Darwin" ]; then
 fi
 
 cat > ~/.bashrc <<- EOF
-# Installed by https://github.com/jamesonwilliams/dotfiles/blob/master/install.sh
 [ -f ~/.bashrc.ps1 ] && . ~/.bashrc.ps1
 [ -f ~/.bashrc.darwin ] && . ~/.bashrc.darwin
 EOF

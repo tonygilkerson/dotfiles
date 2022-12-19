@@ -26,15 +26,16 @@ git_completion='/Applications/Xcode.app/Contents/Developer/usr/share/git-core/gi
 #
 # The next line updates PATH for the Google Cloud SDK.
 #
-if [ -f '/Users/tonygilkerson/google-cloud-sdk/path.bash.inc' ]; then . '/Users/tonygilkerson/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/Users/tgilkerson/google-cloud-sdk/path.bash.inc' ]; then . '/Users/tgilkerson/google-cloud-sdk/path.bash.inc'; fi
+
 
 #
 # The next line enables shell command completion for gcloud.
 #
-if [ -f '/Users/tonygilkerson/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/tonygilkerson/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '/Users/tgilkerson/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/tgilkerson/google-cloud-sdk/completion.bash.inc'; fi
 
 #
-# Enable pash completion
+# Enable bash completion
 #
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
@@ -68,12 +69,6 @@ export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin
 #
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/tgilkerson/google-cloud-sdk/path.bash.inc' ]; then . '/Users/tgilkerson/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/tgilkerson/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/tgilkerson/google-cloud-sdk/completion.bash.inc'; fi
 
 
 # 

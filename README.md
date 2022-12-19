@@ -15,13 +15,15 @@ across some different UNIX/Linux systems that we encounter in the wild:
 * Mac OS X
 * etc.
 
-## Setup
+## Configuration
 
-To install the dot files for a particular user on your system, do:
+* **.bashrc.darwin** - Edit this file, if on a Mac it will get sourced in your `.bashrc` file
+* **.bashrc.ps1** - Edit this file to set your bash prompt
+
+When done run the following:
 
 ```bash
-git clone https://github.com/jamesonwilliams/dotfiles.git
-./dotfiles/install.sh
+~/github/dotfiles/install.sh
 ```
 
 
@@ -33,4 +35,3 @@ FOR | ACTION          | SEND
 ----|-----------------|------
 ⌘ ←	| "SEND HEX CODE"	| 0x01
 ⌘ →	| "SEND HEX CODE"	| 0x05
-
