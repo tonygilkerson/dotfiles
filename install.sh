@@ -2,17 +2,14 @@
 
 set -x 
 
-install .bashrc.ps1 ~/
+#
+# Put in path so "source load-k8s-config.sh" can be added in the .bashrc
+#
+install kubeconf/load-k8s-config.sh /usr/local/bin/
 
-if [ "$(uname)" == "Darwin" ]; then
-    install .bashrc.darwin ~/
-    echo ". ~/.bashrc" > ~/.bash_profile
-fi
-
-cat > ~/.bashrc <<- EOF
-[ -f ~/.bashrc.ps1 ] && . ~/.bashrc.ps1
-[ -f ~/.bashrc.darwin ] && . ~/.bashrc.darwin
-EOF
+install .my-ps1 ~/
+install .my-bashrc ~/
+install .bashrc ~/
+echo ". ~/.bashrc" > ~/.bash_profile
 
 echo "Done! - to use 'source ~/.bashrc'"
-
