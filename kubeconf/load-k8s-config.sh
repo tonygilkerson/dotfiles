@@ -28,3 +28,6 @@ IFS="$OIFS"
 cp "$HOME/.kube/config" "$HOME/.kube/config-$(date '+%Y-%m-%d-%H:%M:%S')"
 kubectl config view --flatten > "$HOME/.kube/merged-config" && mv "$HOME/.kube/merged-config" "$HOME/.kube/config"
 export KUBECONFIG="$HOME/.kube/config"
+
+chmod o-r "$HOME/.kube/config"
+chmod g-r "$HOME/.kube/config"
