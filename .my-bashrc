@@ -87,3 +87,7 @@ export KIND_EXPERIMENTAL_PROVIDER=podman
 # Will add all in ~/.kube/config-giles to KUBECONFIG
 # Comment out and just run manually as needed
 # source load-k8s-config.sh
+
+# Use new kubectl plugin called “gke-gcloud-auth-plugin”
+# see: https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
