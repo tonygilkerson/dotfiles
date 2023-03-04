@@ -26,7 +26,6 @@ When done run the following:
 ~/github/dotfiles/install.sh
 ```
 
-
 ## Manual Stuff
 
 Add in iTerm2 the following Profile Shortcut Keys, [ref](https://stackoverflow.com/questions/6205157/how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line)
