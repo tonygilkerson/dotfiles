@@ -24,7 +24,7 @@ build_ps1()
       # make prompt look like <:-) by adding a nose and hat
       namespace="-"  # nose
       cluster="<"    # hat
-    elif [[ -n "$string" ]]; then
+    else
       namespace="$(kubectl config view | kx="$(kubectl config current-context)" yq '.contexts[] | select(.name ==env(kx)) | select(.context.namespace != null) | .context.namespace' -)"
       cluster="$(kubectl config current-context)"
     fi
