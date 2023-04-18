@@ -91,3 +91,37 @@ export KIND_EXPERIMENTAL_PROVIDER=podman
 # Use new kubectl plugin called “gke-gcloud-auth-plugin”
 # see: https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+
+#
+# Homebrew settings for cloudnative-pg operator development
+# 
+# I am not sure if I want to do this all the time so I am creating a 
+# function that I can call to setup my cnpg dev sandbox when needed
+#
+# ref: https://github.com/cloudnative-pg/cloudnative-pg/blob/main/contribute/development_environment/README.md#installation
+#
+# 
+function cnpgdev() {
+  export PATH="/usr/local/opt/gettext/bin:$PATH"
+  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+  export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+  export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+  export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+  export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+  export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
+  export MANPATH="/usr/local/opt/gnu-getopt/share/man:$MANPATH"
+  export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+  export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
+  export LDFLAGS="-L/usr/local/opt/zlib/lib $LDFLAGS"
+  export LDFLAGS="-L/usr/local/opt/gettext/lib $LDFLAGS"
+  export LDFLAGS="-L/usr/local/opt/readline/lib $LDFLAGS"
+  export CPPFLAGS="-I/usr/local/opt/zlib/include $CPPFLAGS"
+  export CPPFLAGS="-I/usr/local/opt/gettext/include $CPPFLAGS"
+  export CPPFLAGS="-I/usr/local/opt/readline/include $CPPFLAGS"
+  export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
+  # GPGv2 backward compatibility
+  export GPG_AGENT_INFO=~/.gnupg/S.gpg-agent::1
+  export GPG_TTY=$(tty)
+}
