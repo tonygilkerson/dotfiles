@@ -34,3 +34,4 @@ FOR | ACTION          | SEND
 ----|-----------------|------
 ⌘ ←	| "SEND HEX CODE"	| 0x01
 ⌘ →	| "SEND HEX CODE"	| 0x05
+
