@@ -30,8 +30,7 @@ When done run the following:
 
 Add in iTerm2 the following Profile Shortcut Keys, [ref](https://stackoverflow.com/questions/6205157/how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line)
 
-FOR | ACTION          | SEND
-----|-----------------|------
-⌘ ←	| "SEND HEX CODE"	| 0x01
-⌘ →	| "SEND HEX CODE"	| 0x05
-
+| FOR | ACTION          | SEND |
+| --- | --------------- | ---- |
+| ⌘ ← | "SEND HEX CODE" | 0x01 |
+| ⌘ → | "SEND HEX CODE" | 0x05 |
