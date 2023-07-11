@@ -17,10 +17,12 @@ across some different UNIX/Linux systems that we encounter in the wild:
 
 ## Configuration
 
-* **.bashrc.darwin** - Edit this file, if on a Mac it will get sourced in your `.bashrc` file
-* **.bashrc.ps1** - Edit this file to set your bash prompt
+Edit the following as needed
 
-When done run the following:
+* **.my-bashrc**
+* **.my-ps1**
+
+When done run the following command
 
 ```bash
 ~/github/dotfiles/install.sh
