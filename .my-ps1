@@ -2,6 +2,7 @@
 
 build_ps1() 
 {
+
     # local bold="\[$(tput bold)\]"
     # local cyan="\[\e[0;36m\]"
     # local  gray="\[\e[1;30m"
@@ -18,15 +19,15 @@ build_ps1()
     local  cluster
 
     directory=$(pwd | sed "s|^$HOME|~|")
-    # ctx=$(kubectl config get-contexts | grep "\*" | awk '{print $2}')
-    ctx=$(kubectl config current-context) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi
+    # ctx=$(kubectl config current-context) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi
+    ctx="$(yq .current-context ~/.kube/config)"
 
-    if [[ -z "$ctx" ]]; then
+    if [ "$ctx" == "null" ]; then
       # make prompt look like <:-) by adding a nose and hat
       namespace="-"  # nose
       cluster="<"    # hat
     else
-      namespace="$(kubectl config view | kx="$(kubectl config current-context)" yq '.contexts[] | select(.name ==env(kx)) | select(.context.namespace != null) | .context.namespace' -)"
+      namespace="$(kubectl config view | kx="$ctx" yq '.contexts[] | select(.name ==env(kx)) | select(.context.namespace != null) | .context.namespace' -)"
       cluster="$(kubectl config current-context)"
     fi
 
