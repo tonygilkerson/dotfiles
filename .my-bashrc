@@ -15,6 +15,9 @@ alias k=kubectl
 alias ns='kubectl config set-context --current --namespace'
 alias ctx='kubectl config use-context'
 
+# extend shell completion to work with that alias
+complete -F __start_kubectl k
+
 #
 # We use Bash in this household, and we ain't never gonna change, not
 # for nobody, no how. And for damn sure, not for no "Apple Computer, inc."
