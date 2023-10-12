@@ -104,6 +104,11 @@ export KIND_EXPERIMENTAL_PROVIDER=podman
 # see: https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
+# There is no official way to turn off the Python deprecation warning that you are encountering as a result of the most recent 
+# release of the Google Cloud SDK. Instead of the outdated Python 3.5-3.7 versions, 
+# you can set up the Cloud SDK to use your current Python 3.10 installation.
+# see https://www.googlecloudcommunity.com/gc/Developer-Tools/gcloud-sdk-python-warning/m-p/607538#M1140
+export CLOUDSDK_PYTHON=/usr/local/bin/python3
 
 #
 # Homebrew settings for cloudnative-pg operator development
