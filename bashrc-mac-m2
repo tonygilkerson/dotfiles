@@ -58,6 +58,11 @@ export PATH=$PATH:/Users/tgilkerson/.cargo/bin
 export KIND_EXPERIMENTAL_PROVIDER=podman
 
 #
+# kpt
+#
+export KPT_FN_RUNTIME=podman
+
+#
 # Will add all in ~/.kube/config-giles to KUBECONFIG
 # Comment out and just run manually as needed
 # source load-k8s-config.sh

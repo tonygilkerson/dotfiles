@@ -30,10 +30,6 @@ complete -F __start_kubectl k
 #  KUBECONFIG=~/.kube/config:$1 kubectl config view --flatten > ~/.kube/mergedkub && mv ~/.kube/mergedkub ~/.kube/config
 #}
 
-#
-# kpt
-#
-export KPT_FN_RUNTIME=podman
 
 #
 # Update path for krew plugins
@@ -46,9 +42,6 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
-
-# see: https://kind.sigs.k8s.io/docs/user/rootless/
-export KIND_EXPERIMENTAL_PROVIDER=podman
 
 #
 # Will add all in ~/.kube/config-giles to KUBECONFIG
