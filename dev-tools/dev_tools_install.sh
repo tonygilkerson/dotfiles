@@ -145,4 +145,13 @@ To install podman
     brew install podman
   linux:
     sudo apt-get -y install podman
+    # Then...
+    # Create this file "/etc/systemd/system/user@.service.d/delegate.conf" add the folloiwng
+    #  [Service]
+    #  Delegate=yes
+    #
+    # Then "sudo systemctl daemon-reload"
+    # see: https://kind.sigs.k8s.io/docs/user/rootless/
+
 EOF
+
