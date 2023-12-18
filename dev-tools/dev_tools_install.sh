@@ -72,7 +72,8 @@ brew install bash-completion
 echo OSTYPE is [$OSTYPE]
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   echo Installing awscli using apt-get...
-  apt-get update && apt-get -y install awscli
+  apt-get update && apt-get -y install awscli 
+
 else
   echo Installing awscli using brew...
   brew install awscli || brew upgrade awscli
@@ -97,7 +98,6 @@ brew install int128/kauthproxy/kauthproxy || brew upgrade int128/kauthproxy/kaut
 brew install int128/kubelogin/kubelogin || brew upgrade int128/kubelogin/kubelogin
 brew install crane || brew upgrade crane
 brew install derailed/k9s/k9s || brew upgrade derailed/k9s/k9s
-brew install podman
 
 echo Installing Krew plugins...
 kubectl krew update
@@ -140,4 +140,9 @@ To update to the newest stable version of tools installed by Homebrew, run:
   brew upgrade
   kubectl krew upgrade
 
+To install podman
+  mac:
+    brew install podman
+  linux:
+    sudo apt-get -y install podman
 EOF
