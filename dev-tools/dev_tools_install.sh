@@ -97,6 +97,7 @@ brew install int128/kauthproxy/kauthproxy || brew upgrade int128/kauthproxy/kaut
 brew install int128/kubelogin/kubelogin || brew upgrade int128/kubelogin/kubelogin
 brew install crane || brew upgrade crane
 brew install derailed/k9s/k9s || brew upgrade derailed/k9s/k9s
+brew install podman
 
 echo Installing Krew plugins...
 kubectl krew update

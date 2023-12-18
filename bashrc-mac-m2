@@ -1,22 +1,7 @@
-# Make Mac more like a real, GNU/Linux computer.
 
-#
-# Colors aid accessibility on the CLI.
-#
-export CLICOLOR=1
-alias ls="ls -Gh"
-alias ll='ls -ltra'
-alias cc='clear;echo -n "Hi, "; whoami; echo " "'
-alias tx='tmux new -s aeg'
-alias cda='cd ~/act3-gitlab'
-alias cdm2='cd ~/m2-gitlab'
-# ckad
-alias k=kubectl
-alias ns='kubectl config set-context --current --namespace'
-alias ctx='kubectl config use-context'
-
-# extend shell completion to work with that alias
-complete -F __start_kubectl k
+###############################################################################
+# Start bashrc-mac-m2
+###############################################################################
 
 #
 # We use Bash in this household, and we ain't never gonna change, not
@@ -51,23 +36,6 @@ if [ -f '/Users/tgilkerson/google-cloud-sdk/completion.bash.inc' ]; then . '/Use
 #
 command -v timoni >/dev/null && . <(timoni completion bash)
 
-#
-# kmerge function
-#
-#function kmerge() {
-#  cp ~/.kube/config ~/.kube/config-$(date '+%Y-%m-%d-%H:%M:%S')
-#  KUBECONFIG=~/.kube/config:$1 kubectl config view --flatten > ~/.kube/mergedkub && mv ~/.kube/mergedkub ~/.kube/config
-#}
-
-#
-# kpt
-#
-export KPT_FN_RUNTIME=podman
-
-#
-# Update path for krew plugins
-#
-export PATH="${PATH}:${HOME}/.krew/bin"
 
 #
 # Toolchain needed for TinyGo
@@ -75,12 +43,6 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 #      https://docs.espressif.com/projects/esp-idf/en/release-v3.0/get-started/macos-setup.html
 #
 export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin
-
-#
-# Go
-#
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$PATH
 
 
 # 
@@ -110,39 +72,6 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 # see https://www.googlecloudcommunity.com/gc/Developer-Tools/gcloud-sdk-python-warning/m-p/607538#M1140
 export CLOUDSDK_PYTHON=/usr/local/bin/python3
 
-#
-# Homebrew settings for cloudnative-pg operator development
-# 
-# I am not sure if I want to do this all the time so I am creating a 
-# function that I can call to setup my cnpg dev sandbox when needed
-#
-# ref: https://github.com/cloudnative-pg/cloudnative-pg/blob/main/contribute/development_environment/README.md#installation
-#
-# 
-function cnpgdev() {
-  export PATH="/usr/local/opt/gettext/bin:$PATH"
-  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-  export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-  export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
-  export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-  export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-  export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-  export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
-  export MANPATH="/usr/local/opt/gnu-getopt/share/man:$MANPATH"
-  export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
-  export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
-  export LDFLAGS="-L/usr/local/opt/zlib/lib $LDFLAGS"
-  export LDFLAGS="-L/usr/local/opt/gettext/lib $LDFLAGS"
-  export LDFLAGS="-L/usr/local/opt/readline/lib $LDFLAGS"
-  export CPPFLAGS="-I/usr/local/opt/zlib/include $CPPFLAGS"
-  export CPPFLAGS="-I/usr/local/opt/gettext/include $CPPFLAGS"
-  export CPPFLAGS="-I/usr/local/opt/readline/include $CPPFLAGS"
-  export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
-  # GPGv2 backward compatibility
-  export GPG_AGENT_INFO=~/.gnupg/S.gpg-agent::1
-  export GPG_TTY=$(tty)
-}
-
 
 #
 # iTerm2 Integration
@@ -155,3 +84,9 @@ iterm2_print_user_vars() {
   iterm2_set_user_var kubeContext "$KUBECONTEXT"
   
 }
+
+
+###############################################################################
+# End bashrc-mac-m2
+###############################################################################
+

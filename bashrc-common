@@ -1,0 +1,61 @@
+
+###############################################################################
+# Start bashrc-common
+###############################################################################
+
+#
+# Colors aid accessibility on the CLI.
+#
+export CLICOLOR=1
+alias ls="ls -Gh"
+alias ll='ls -ltra'
+alias cc='clear;echo -n "Hi, "; whoami; echo " "'
+alias tx='tmux new -s aeg'
+alias cda='cd ~/act3-gitlab'
+alias cdm2='cd ~/m2-gitlab'
+# ckad
+alias k=kubectl
+alias ns='kubectl config set-context --current --namespace'
+alias ctx='kubectl config use-context'
+
+# extend shell completion to work with that alias
+complete -F __start_kubectl k
+
+
+#
+# kmerge function
+#
+#function kmerge() {
+#  cp ~/.kube/config ~/.kube/config-$(date '+%Y-%m-%d-%H:%M:%S')
+#  KUBECONFIG=~/.kube/config:$1 kubectl config view --flatten > ~/.kube/mergedkub && mv ~/.kube/mergedkub ~/.kube/config
+#}
+
+#
+# kpt
+#
+export KPT_FN_RUNTIME=podman
+
+#
+# Update path for krew plugins
+#
+export PATH="${PATH}:${HOME}/.krew/bin"
+
+#
+# Go
+#
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
+
+
+# see: https://kind.sigs.k8s.io/docs/user/rootless/
+export KIND_EXPERIMENTAL_PROVIDER=podman
+
+#
+# Will add all in ~/.kube/config-giles to KUBECONFIG
+# Comment out and just run manually as needed
+# source load-k8s-config.sh
+
+###############################################################################
+# End bashrc-common
+###############################################################################
+
