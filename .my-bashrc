@@ -14,6 +14,7 @@ alias cdm2='cd ~/m2-gitlab'
 alias k=kubectl
 alias ns='kubectl config set-context --current --namespace'
 alias ctx='kubectl config use-context'
+alias getctx='kubectl config get-context'
 
 # extend shell completion to work with that alias
 complete -F __start_kubectl k
@@ -79,8 +80,8 @@ export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin
 #
 # Go
 #
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$PATH
+# export GOPATH=$HOME/go
+# export PATH=$GOPATH/bin:$PATH
 
 
 # 
@@ -155,3 +156,6 @@ iterm2_print_user_vars() {
   iterm2_set_user_var kubeContext "$KUBECONTEXT"
   
 }
+
+# see: https://direnv.net/docs/hook.html
+eval "$(direnv hook bash)"

@@ -14,7 +14,6 @@ This will allow me to switch between the cluster-1 and cluster-2 contexts using 
 
 This solves my problem of allowing me to have multiple config files, but still fairly manual since every time I restart my terminal or if I have a new kubeconfig (or I have to remove an old one) I have to set that environment variable again. For that, I use a very simple bash script that scans the directory for new files and automatically adds them to the $KUBECONFIG environment variable:
 
-
 ```sh
 #!/usr/bin/env bash
 # If there's already a kubeconfig file in ~/.kube/config it will import that too and all the contexts
@@ -34,7 +33,6 @@ do
 done
 IFS="$OIFS"
 ```
-
 
 Then you can source that script by typing `source load-k8s-configs.sh` on your Mac terminal and that will load all your kubeconfig files as part of your `$KUBECONFIG` environment variable.
 
