@@ -19,13 +19,15 @@ across some different UNIX/Linux systems that we encounter in the wild:
 
 Edit the following as needed
 
-* **.my-bashrc**
-* **.my-ps1**
+* **bashrc-common**
+* **bashrc-linux-samson**
+* **bashrc-mac-m2**
+* **ps1-k8s**
 
 When done run the following command
 
 ```bash
-~/github/dotfiles/install.sh
+~/github/tonygilkerson/dotfiles/install.sh
 ```
 
 ## Manual Stuff
