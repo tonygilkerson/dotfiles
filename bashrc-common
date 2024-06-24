@@ -42,6 +42,8 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
+# see: https://direnv.net/docs/hook.html
+eval "$(direnv hook bash)"
 
 #
 # Will add all in ~/.kube/config-giles to KUBECONFIG

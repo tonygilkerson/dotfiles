@@ -121,6 +121,3 @@ iterm2_print_user_vars() {
   iterm2_set_user_var kubeContext "$KUBECONTEXT"
   
 }
-
-# see: https://direnv.net/docs/hook.html
-eval "$(direnv hook bash)"
