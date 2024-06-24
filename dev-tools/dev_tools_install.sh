@@ -72,7 +72,8 @@ brew install bash-completion
 echo OSTYPE is [$OSTYPE]
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   echo Installing awscli using apt-get...
-  apt-get update && apt-get -y install awscli
+  apt-get update && apt-get -y install awscli 
+
 else
   echo Installing awscli using brew...
   brew install awscli || brew upgrade awscli
@@ -139,4 +140,18 @@ To update to the newest stable version of tools installed by Homebrew, run:
   brew upgrade
   kubectl krew upgrade
 
+To install podman
+  mac:
+    brew install podman
+  linux:
+    sudo apt-get -y install podman
+    # Then...
+    # Create this file "/etc/systemd/system/user@.service.d/delegate.conf" add the folloiwng
+    #  [Service]
+    #  Delegate=yes
+    #
+    # Then "sudo systemctl daemon-reload"
+    # see: https://kind.sigs.k8s.io/docs/user/rootless/
+
 EOF
+
