@@ -1,4 +1,6 @@
-# Bashrc
+# Starship
+
+See [Starship Configuration](https://starship.rs/config/) for more detail.
 
 ## Instal NerdFont (onetime task)
 
