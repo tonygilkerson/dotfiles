@@ -17,6 +17,7 @@ alias cdm2='cd ~/m2-gitlab'
 alias k=kubectl
 alias ns='kubectl config set-context --current --namespace'
 alias ctx='kubectl config use-context'
+alias tf='terraform'
 
 # extend shell completion to work with that alias
 complete -F __start_kubectl k
