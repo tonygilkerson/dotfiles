@@ -4,9 +4,12 @@
 
 ref [https://k9scli.io/topics/skins/](https://k9scli.io/topics/skins/)
 
-Copy skins to 
-
 ```sh
-# cp k9s/*.yml ~/Library/Application\ Support/k9s/
-cp k9s/config.yaml ~/Library/Application\ Support/k9s/
+# Mac
+vim ~/Library/Application\ Support/k9s/config.yaml # set "k9s.ui.skin: stock"
+cp k9s/skin-examples/stock.yaml ~/Library/Application\ Support/k9s/skins
+
+# Linux
+vim ~/.config/k9s/config.yaml # set "k9s.ui.skin: stock"
+cp k9s/skin-examples/stock.yaml ~/.config/k9s/skins
 ```
