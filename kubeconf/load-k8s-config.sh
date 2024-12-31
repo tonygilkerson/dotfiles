@@ -18,7 +18,8 @@ OIFS="$IFS"
 IFS=$'\n'
 for kubeconfigFile in $(find "${ADD_KUBECONFIG_FILES}" -type f -name "*.yml" -o -name "*.yaml")
 do
-    export KUBECONFIG="$kubeconfigFile:$KUBECONFIG"
+  echo "Add: $kubeconfigFile"
+  export KUBECONFIG="$kubeconfigFile:$KUBECONFIG"
 done
 IFS="$OIFS"
 

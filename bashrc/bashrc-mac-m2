@@ -164,3 +164,11 @@ iterm2_print_user_vars() {
   iterm2_set_user_var kubeContext "$KUBECONTEXT"
   
 }
+
+#
+# Update path for brew
+#
+export PATH="/usr/local/sbin:$PATH"
+
+# Need blank line at end
+
