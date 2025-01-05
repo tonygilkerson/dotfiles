@@ -16,4 +16,4 @@ sudo systemctl set-default multi-user.target
 
 ```
 
-You will still be able to use X by typing `startx`` after you logged in
+You will still be able to use X by typing `startx` after you logged in
