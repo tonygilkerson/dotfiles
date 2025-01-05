@@ -1,5 +1,0 @@
-
-#
-# Homebrew - this will put homebrew in the path
-#
-eval "$(/opt/homebrew/bin/brew shellenv)"

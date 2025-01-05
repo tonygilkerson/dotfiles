@@ -63,21 +63,24 @@ fi
 echo Updating Homebrew. This may take a while...
 brew update
 
+# I assume if on the mac you are using the default zsh and completion is already installed
 echo Setting up Bash completion file and folder...
-brew install bash-completion
-
-# If os=linux then install awscli via apt-get to avoid bloat
-#  when awscli is installed via homebrew it pulls in alot of 
-#  unneeded dependencies causing the image to be bloated
-echo OSTYPE is [$OSTYPE]
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  echo Installing awscli using apt-get...
-  apt-get update && apt-get -y install awscli 
-
-else
-  echo Installing awscli using brew...
-  brew install awscli || brew upgrade awscli
+  brew install bash-completion
 fi
+
+# # If os=linux then install awscli via apt-get to avoid bloat
+# #  when awscli is installed via homebrew it pulls in alot of 
+# #  unneeded dependencies causing the image to be bloated
+# echo OSTYPE is [$OSTYPE]
+# if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+#   echo Installing awscli using apt-get...
+#   apt-get update && apt-get -y install awscli 
+
+# else
+#   echo Installing awscli using brew...
+#   brew install awscli || brew upgrade awscli
+# fi
 
 echo Installing tools with brew...
 # Homebrew installs to `brew --prefix` by default
@@ -85,24 +88,25 @@ brew install helmfile || brew upgrade helmfile
 brew install kind || brew upgrade kind
 brew install kubernetes-cli || brew upgrade kubernetes-cli
 brew install helm || brew upgrade helm
-brew install skaffold || brew upgrade skaffold
-brew install container-structure-test || brew upgrade container-structure-test
-brew install rancher-cli || brew upgrade rancher-cli
-brew install minio-mc || brew upgrade minio-mc
+# brew install skaffold || brew upgrade skaffold
+# brew install container-structure-test || brew upgrade container-structure-test
+# brew install rancher-cli || brew upgrade rancher-cli
+# brew install minio-mc || brew upgrade minio-mc
 brew install yq || brew upgrade yq
-brew install sops || brew upgrade sops
+brew install jq || brew upgrade jq
+# brew install sops || brew upgrade sops
 brew install krew || brew upgrade krew
-brew install parallel || brew upgrade parallel
-brew install kustomize || brew upgrade kustomize
-brew install int128/kauthproxy/kauthproxy || brew upgrade int128/kauthproxy/kauthproxy
-brew install int128/kubelogin/kubelogin || brew upgrade int128/kubelogin/kubelogin
+# brew install parallel || brew upgrade parallel
+# brew install kustomize || brew upgrade kustomize
+# brew install int128/kauthproxy/kauthproxy || brew upgrade int128/kauthproxy/kauthproxy
+# brew install int128/kubelogin/kubelogin || brew upgrade int128/kubelogin/kubelogin
 brew install crane || brew upgrade crane
 brew install derailed/k9s/k9s || brew upgrade derailed/k9s/k9s
 
-# AltTab
-# This app make the Mac act like windows so when I alt+tab to a minimized window it will open it.
-# see: https://alt-tab-macos.netlify.app/
-brew install --cask alt-tab 
+# # AltTab
+# # This app make the Mac act like windows so when I alt+tab to a minimized window it will open it.
+# # see: https://alt-tab-macos.netlify.app/
+# brew install --cask alt-tab 
 
 echo Installing Krew plugins...
 kubectl krew update
