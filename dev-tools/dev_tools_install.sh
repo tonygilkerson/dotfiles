@@ -84,6 +84,7 @@ fi
 
 echo Installing tools with brew...
 # Homebrew installs to `brew --prefix` by default
+brew install go || brew upgrade go
 brew install helmfile || brew upgrade helmfile
 brew install kind || brew upgrade kind
 brew install kubernetes-cli || brew upgrade kubernetes-cli
