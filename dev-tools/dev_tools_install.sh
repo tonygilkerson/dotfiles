@@ -125,7 +125,7 @@ echo $helm_plugins | grep push || helm plugin install https://github.com/chartmu
 echo $helm_plugins | grep helm-git || helm plugin install https://github.com/aslafy-z/helm-git
 echo $helm_plugins | grep diff || helm plugin install https://github.com/databus23/helm-diff
 echo $helm_plugins | grep s3 || helm plugin install https://github.com/hypnoglow/helm-s3.git
-echo $helm_plugins | grep x || helm plugin install https://github.com/mumoshu/helm-x
+#echo $helm_plugins | grep x || helm plugin install https://github.com/mumoshu/helm-x
 
 cat << EOF
 
