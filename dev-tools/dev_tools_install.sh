@@ -104,6 +104,7 @@ brew install krew || brew upgrade krew
 brew install crane || brew upgrade crane
 brew install derailed/k9s/k9s || brew upgrade derailed/k9s/k9s
 brew install tmux || brew upgrade tmux
+brew install ffurrer2/tap/semver  
 
 # # AltTab
 # # This app make the Mac act like windows so when I alt+tab to a minimized window it will open it.
