@@ -1,3 +1,15 @@
+#
+# alias
+#
+alias ls="ls -Gh"
+alias ll='ls -ltra'
+alias cc='clear;echo -n "Hi, "; whoami; echo " "'
+alias tx='tmux new -s aeg'
+# ckad
+alias k=kubectl
+alias ns='kubectl config set-context --current --namespace'
+alias ctx='kubectl config use-context'
+alias tf='terraform'
 
 #
 # Homebrew - this will put homebrew in the path

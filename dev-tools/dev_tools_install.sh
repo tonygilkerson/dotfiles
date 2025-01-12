@@ -103,6 +103,7 @@ brew install krew || brew upgrade krew
 # brew install int128/kubelogin/kubelogin || brew upgrade int128/kubelogin/kubelogin
 brew install crane || brew upgrade crane
 brew install derailed/k9s/k9s || brew upgrade derailed/k9s/k9s
+brew install tmux || brew upgrade tmux
 
 # # AltTab
 # # This app make the Mac act like windows so when I alt+tab to a minimized window it will open it.
@@ -126,6 +127,10 @@ echo $helm_plugins | grep helm-git || helm plugin install https://github.com/asl
 echo $helm_plugins | grep diff || helm plugin install https://github.com/databus23/helm-diff
 echo $helm_plugins | grep s3 || helm plugin install https://github.com/hypnoglow/helm-s3.git
 #echo $helm_plugins | grep x || helm plugin install https://github.com/mumoshu/helm-x
+
+
+# chrome
+brew install --cask google-chrome
 
 cat << EOF
 
