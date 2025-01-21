@@ -72,4 +72,18 @@ parse_git_branch() {
 export PS1='\w $(parse_git_branch)\$ '
 PROMPT_COMMAND='PS1="\w $(parse_git_branch)\$ "'
 
+#
+# GO - Update the path 
+#
+
+# Add Go binaries to PATH
+if [ -d "$HOME/go/bin" ]; then
+  PATH="$HOME/go/bin:$PATH"
+fi
+
+#
+# BREW - Export env vars and add brew to the path
+#
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # done.
