@@ -10,9 +10,7 @@ export CLICOLOR=1
 alias ls="ls -Gh"
 alias ll='ls -ltra'
 alias cc='clear;echo -n "Hi, "; whoami; echo " "'
-alias tx='tmux new -s aeg'
-alias cda='cd ~/act3-gitlab'
-alias cdm2='cd ~/m2-gitlab'
+alias tx='tmux new -s tony'
 # ckad
 alias k=kubectl
 alias ns='kubectl config set-context --current --namespace'

@@ -12,4 +12,7 @@ echo "source ~/.bashrc" > ~/.bash_profile
 # linux-samson
 cp bashrc/bashrc-linux-samson ~/.bashrc
 echo "source ~/.bashrc" > ~/.bash_profile
+
+# linux-UDRI
+cat bashrc/bashrc-linux-udri > ~/.bashrc
 ```
