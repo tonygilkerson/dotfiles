@@ -61,7 +61,13 @@ alias ctx='kubectl config use-context'
 # [ - begin a sequence of non-printing characters, which could be used to embed a terminal control sequence into the prompt
 # ] - end a sequence of non-printing characters
 
-parse_git_branch() {
+get_host() {
+    green="\[\033[0;32m\]"
+    escape="\[\033[0m\]"
+    host="udev"
+    echo -e "${green}${host}: ${escape}"
+}
+get_branch() {
     branch=$(git branch 2> /dev/null | sed -e '/^\* /s/^\* //')
     if [ ! "${branch}" == "" ]; then
       red="\[\033[0;31m\]"
@@ -69,8 +75,8 @@ parse_git_branch() {
       echo -e "${red}(${branch})${escape}"
     fi
 }
-export PS1='\w $(parse_git_branch)\$ '
-PROMPT_COMMAND='PS1="\w $(parse_git_branch)\$ "'
+export PS1='$(get_host)\w $(get_branch)\$ '
+PROMPT_COMMAND='PS1="$(get_host)\w $(get_branch)\$ "'
 
 #
 # GO - Update the path 
