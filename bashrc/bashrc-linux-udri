@@ -6,13 +6,13 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-        . /etc/bashrc
+  . /etc/bashrc
 fi
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+  PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
@@ -86,4 +86,7 @@ fi
 #
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# done.
+#
+# GPG - avoid "failed to write commit object" when committing
+#
+export GPG_TTY=$(tty)
