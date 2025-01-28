@@ -1,0 +1,6 @@
+# 
+# My UDRI Dev laptop on my home network
+#
+Host udev
+    HostName 192.168.50.199
+    User tgilkerson
