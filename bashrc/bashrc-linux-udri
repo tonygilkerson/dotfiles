@@ -31,6 +31,8 @@ alias tx='tmux new -s tony'
 alias k=kubectl
 alias ns='kubectl config set-context --current --namespace'
 alias ctx='kubectl config use-context'
+# gitlab roots
+alias cdrs='cd ~/gitlab-rs-glu'
 
 #
 # Prompt
@@ -67,7 +69,16 @@ get_host() {
     host="udev"
     echo -e "${green}${host}: ${escape}"
 }
-get_branch() {
+
+get_venv() {
+    green="\[\033[0;32m\]"
+    escape="\[\033[0m\]"
+    if [[ -n "${VIRTUAL_ENV##*/}" ]]; then 
+      echo -e "${green}(${VIRTUAL_ENV##*/})${escape}" 
+    fi
+}
+
+parse_git_branch() {
     branch=$(git branch 2> /dev/null | sed -e '/^\* /s/^\* //')
     if [ ! "${branch}" == "" ]; then
       red="\[\033[0;31m\]"
@@ -75,8 +86,8 @@ get_branch() {
       echo -e "${red}(${branch})${escape}"
     fi
 }
-export PS1='$(get_host)\w $(get_branch)\$ '
-PROMPT_COMMAND='PS1="$(get_host)\w $(get_branch)\$ "'
+# export PS1='$(get_host)\w $(parse_git_branch)\$ '
+PROMPT_COMMAND='PS1="$(get_host)\w $(get_venv)$(parse_git_branch)\n\$ "' 
 
 #
 # GO - Update the path 

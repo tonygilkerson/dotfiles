@@ -2,5 +2,17 @@
 # My UDRI Dev laptop on my home network
 #
 Host udev
-    HostName 192.168.50.199
-    User tgilkerson
+  HostName 192.168.50.199
+  User tgilkerson
+# 
+# zoo - k8s cluster
+#
+Host zoo
+  HostName 192.168.50.10
+  User tgilkerson
+# 
+# bay - gitlab server
+#
+Host zoo
+  HostName 192.168.50.11
+  User tgilkerson
