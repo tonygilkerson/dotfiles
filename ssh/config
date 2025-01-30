@@ -13,6 +13,6 @@ Host zoo
 # 
 # bay - gitlab server
 #
-Host zoo
+Host bay
   HostName 192.168.50.11
   User tgilkerson
