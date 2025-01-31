@@ -79,7 +79,7 @@ get_venv() {
 }
 
 parse_git_branch() {
-    branch=$(git branch 2> /dev/null | sed -e '/^\* /s/^\* //')
+    branch=$(git branch 2> /dev/null | grep "*" | sed -e '/^\* /s/^\* //')
     if [ ! "${branch}" == "" ]; then
       red="\[\033[0;31m\]"
       escape="\[\033[0m\]"
