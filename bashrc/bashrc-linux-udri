@@ -26,6 +26,7 @@ export CLICOLOR=1
 alias ls="ls -Gh"
 alias ll='ls -ltra'
 alias cc='clear;echo -n "Hi, "; whoami; echo " "'
+alias ccc="clear;tree -d -L 4"
 alias tx='tmux new -s tony'
 # ckad
 alias k=kubectl
