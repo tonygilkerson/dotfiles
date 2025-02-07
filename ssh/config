@@ -1,9 +1,16 @@
 # 
 # My UDRI Dev laptop on my home network
 #
+#  To use chrome with the DynamicForward port 9995, run:
+#   $ google-chrome --proxy-server="socks5://localhost:9995"
+#
+#  I configured Godaddy so you can use the following URL:
+#    http://udev.tonygilkerson.us:<port>
+#
 Host udev
   HostName 192.168.50.199
   User tgilkerson
+  DynamicForward 9995
 # 
 # zoo - k8s cluster
 #
