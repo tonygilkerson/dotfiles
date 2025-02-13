@@ -26,14 +26,15 @@ export CLICOLOR=1
 alias ls="ls -Gh"
 alias ll='ls -ltra'
 alias cc='clear;echo -n "Hi, "; whoami; echo " "'
-alias ccc="clear;tree -d -L 4"
+alias ccc="clear;tree -d -L 4 --filelimit 4"
 alias tx='tmux new -s tony'
 # ckad
 alias k=kubectl
 alias ns='kubectl config set-context --current --namespace'
 alias ctx='kubectl config use-context'
 # gitlab roots
-alias cdrs='cd ~/gitlab-rs-glu'
+alias cdrs='cd ~/gitlab-rs-glu/rs'
+alias cdnote="cd ~/gitlab-rs-glu/tony.gilkerson/notebook"
 
 #
 # Prompt
