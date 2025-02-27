@@ -15,4 +15,8 @@ echo "source ~/.bashrc" > ~/.bash_profile
 
 # linux-UDRI
 cat bashrc/bashrc-linux-udri > ~/.bashrc
+
+# linux-ray
+cat bashrc/bashrc-linux-ray > ~/.bashrc
+
 ```
