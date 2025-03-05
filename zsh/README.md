@@ -8,5 +8,7 @@ This is a good [reference](http://mywiki.wooledge.org/DotFiles) on how DotFiles 
 ```sh
 # Install
 
-cat zsh/zshrc-my-mac-air >> ~/.zshrc
+cat zsh/zshrc-my-mac-air > ~/.zshrc
+
+cat zsh/zshrc-ray > ~/.zshrc
 ```

@@ -160,7 +160,7 @@ To install podman
   mac:
     brew install podman
   linux:
-    sudo apt-get -y install podman
+    sudo apt-get -y install podman-docker
     # Then...
     # Create this file "/etc/systemd/system/user@.service.d/delegate.conf" add the folloiwng
     #  [Service]
