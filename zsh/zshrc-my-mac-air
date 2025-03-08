@@ -1,3 +1,7 @@
+# Enable Zsh completion
+autoload -Uz compinit
+compinit
+
 #
 # alias
 #
@@ -6,7 +10,7 @@ alias ll='ls -ltra'
 alias cc='clear;echo -n "Hi, "; whoami; echo " "'
 alias tx='tmux new -s aeg'
 # ckad
-alias k=kubectl
+alias k='kubectl'
 alias ns='kubectl config set-context --current --namespace'
 alias ctx='kubectl config use-context'
 alias tf='terraform'
@@ -37,6 +41,24 @@ precmd() { vcs_info }
 # The next line that sets up the Git branch details into your prompt.
 # That %b is the branch name variable
 zstyle ':vcs_info:git:*' formats '%b '
+setopt PROMPT_SUBST
+
+get_prompt_extras() {
+  extras=()
+
+  if [[ -n "${VIRTUAL_ENV##*/}" ]]; then 
+    extras+=("${VIRTUAL_ENV##*/}")
+  fi
+  if [[ -n "${vcs_info_msg_0_}" ]]; then 
+    extras+=("${vcs_info_msg_0_}")
+  fi
+
+  if [[ ${#extras[@]} -gt 0 ]]; then 
+    echo "( ${extras[*]} )"
+  fi
+
+
+}
 
 # Color           - When you surround things in %F and %f, that changes the foreground color of anything in between them.
 # Dates and times - The %* that you see is the time (in 24-hour format, with seconds). There's more options for this, like %W for the date 
@@ -44,8 +66,7 @@ zstyle ':vcs_info:git:*' formats '%b '
 # The directory   - The %~ shows the current working directory, and its path
 #                   ref: ref: https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html (13.2.3 Shell state)
 # Variable        - ${vcs_info_msg_0_} is the branch variable we setup above
-setopt PROMPT_SUBST
-PROMPT='%F{green}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+PROMPT='%F{green}%~%f%F{red}$(get_prompt_extras)%f $ '
 
 
 #
