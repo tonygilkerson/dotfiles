@@ -109,3 +109,8 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # GPG - avoid "failed to write commit object" when committing
 #
 export GPG_TTY=$(tty)
+
+#
+# point to InfoList data file
+#
+INFOLIST_DATA="/home/tgilkerson/gitlab-rs-glu/tony.gilkerson/notebook/infolist/infolist-rs.yaml"
