@@ -138,6 +138,13 @@ export KIND_EXPERIMENTAL_PROVIDER=podman
 export KPT_FN_RUNTIME=podman
 
 #
+# Docker link to Podman
+#
+if [ ! -f /usr/local/bin/docker ]; then
+  sudo ln -s $(which podman) /usr/local/bin/docker
+fi
+
+#
 # Will add all in ~/.kube/config-giles to KUBECONFIG
 # Comment out and just run manually as needed
 # source load-k8s-config.sh
