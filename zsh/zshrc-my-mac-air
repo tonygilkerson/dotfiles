@@ -15,7 +15,7 @@ alias ns='kubectl config set-context --current --namespace'
 alias ctx='kubectl config use-context'
 alias tf='terraform'
 # other
-alias cdnote='cd github/tonygilkerson/notebook'
+alias cdnote='cd ~/github/tonygilkerson/notebook'
 
 #
 # Homebrew - this will put homebrew in the path
