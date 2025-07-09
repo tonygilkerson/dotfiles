@@ -5,22 +5,24 @@
 * [neovim.io](https://neovim.io/)
 * [nvui](https://nvchad.com/news/nvui)
 
-## Setup A
-
-Setup A is my first attempt with NvChad, see Setup B for a simpler approach
+## Setup
 
 ```sh
 brew install nvim
 
-# install nerdfonts
-mkdir -p ~/.local/share/fonts
-# download from: https://medium.com/r?url=https%3A%2F%2Fgithub.com%2Fryanoasis%2Fnerd-fonts%2Freleases%2Fdownload%2Fv3.0.2%2FJetBrainsMono.zip
-cd ~/Downloads
-unzip JetBrainsMono.zip -d JetBrainsMono
-mv ./JetBrainsMono/JetBrainsMonoNLNerdFont-Regular.ttf ~/.local/share/fonts
-mv ./JetBrainsMono/JetBrainsMonoNLNerdFont-SemiBold.ttf ~/.local/share/fonts
-# Clear and regenerate your font cache with the following command:
-fc-cache -f -v
+# I dont need the fonts if I am using ghostty
+
+# # install nerdfonts
+# mkdir -p ~/.local/share/fonts
+# # download from: https://medium.com/r?url=https%3A%2F%2Fgithub.com%2Fryanoasis%2Fnerd-fonts%2Freleases%2Fdownload%2Fv3.0.2%2FJetBrainsMono.zip
+# cd ~/Downloads
+# unzip JetBrainsMono.zip -d JetBrainsMono
+# mv ./JetBrainsMono/JetBrainsMonoNLNerdFont-Regular.ttf ~/.local/share/fonts
+# mv ./JetBrainsMono/JetBrainsMonoNLNerdFont-SemiBold.ttf ~/.local/share/fonts
+# # Clear and regenerate your font cache with the following command:
+# fc-cache -f -v
+
+
 
 # configure nvim with starter config called 'nvchad'
 
@@ -51,9 +53,3 @@ git clone https://github.com/NvChad/starter ~/.config/nvim --depth 1
   * `<leader>` which is referring to the Spacebar key. 
   * `C` is for the Ctrl/Control key, 
   * `A` is for the Alt/Option key and `S` is for the Shift key.
-
-
-## Setup B
-
-```sh
-brew install nvim
