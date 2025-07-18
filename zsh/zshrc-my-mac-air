@@ -10,13 +10,14 @@ alias ll='ls -ltra'
 alias cc='clear;echo -n "Hi, "; whoami; echo " "'
 alias ccc="clear;tree -d -L 1 $(pwd)"
 alias tx='tmux new -s aeg'
+# well known dirs
+alias cdgh='cd ~/github/tonygilkerson'
+alias cdnote='cd ~/github/tonygilkerson/notebook'
 # ckad
 alias k='kubectl'
 alias ns='kubectl config set-context --current --namespace'
 alias ctx='kubectl config use-context'
 alias tf='terraform'
-# other
-alias cdnote='cd ~/github/tonygilkerson/notebook'
 
 #
 # Homebrew - this will put homebrew in the path

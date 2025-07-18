@@ -9,25 +9,26 @@
 
 ```sh
 brew install nvim
-
-# I dont need the fonts if I am using ghostty
-
-# # install nerdfonts
-# mkdir -p ~/.local/share/fonts
-# # download from: https://medium.com/r?url=https%3A%2F%2Fgithub.com%2Fryanoasis%2Fnerd-fonts%2Freleases%2Fdownload%2Fv3.0.2%2FJetBrainsMono.zip
-# cd ~/Downloads
-# unzip JetBrainsMono.zip -d JetBrainsMono
-# mv ./JetBrainsMono/JetBrainsMonoNLNerdFont-Regular.ttf ~/.local/share/fonts
-# mv ./JetBrainsMono/JetBrainsMonoNLNerdFont-SemiBold.ttf ~/.local/share/fonts
-# # Clear and regenerate your font cache with the following command:
-# fc-cache -f -v
-
-
-
-# configure nvim with starter config called 'nvchad'
-
-# ref: https://blog.spoonconsulting.com/getting-started-with-neovim-using-nvchad-a-developers-guide-f97d81e85d60
 git clone https://github.com/NvChad/starter ~/.config/nvim --depth 1
+
+
+# How to find your config
+find ~/.config/nvim -name "*.lua" -o -name "*.vim" | xargs grep -l "nvim-tree"
+/Users/tonygilkerson/.config/nvim/lua/plugins/init.lua
+
+#Edit ~/.config/nvim/lua/plugins/init.lua and add the following in the `return` block:
+  
+  -- AEG Modification
+  -- nvim-tree configuration to show full path
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      renderer = {
+        root_folder_label = ":~:s?$?/..?", -- Shows full path with ~ for home directory
+      },
+    },
+  },
+
 ```
 
 ### Let’s take a look at some of NvChad’s preinstalled plugins:
