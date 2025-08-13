@@ -34,7 +34,8 @@ alias ns='kubectl config set-context --current --namespace'
 alias ctx='kubectl config use-context'
 # gitlab roots
 alias cdrs='cd ~/gitlab-rs-glu/rs'
-alias cddle='cd ~/gitlab-dle/rs'
+alias cddle='cd ~/gitlab-dle'
+alias cddleu='cd ~/gitlab-dle-ultimate/rs'
 alias cdnote="cd ~/gitlab-rs-glu/tony.gilkerson/notebook"
 
 #
