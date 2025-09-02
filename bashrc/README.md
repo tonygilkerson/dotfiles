@@ -14,7 +14,7 @@ cp bashrc/bashrc-linux-samson ~/.bashrc
 echo "source ~/.bashrc" > ~/.bash_profile
 
 # linux-UDRI
-cat bashrc/bashrc-linux-udri > ~/.bashrc
+cat bashrc/bashrc-rocky-udri > ~/.bashrc
 
 # linux-ray
 cat bashrc/bashrc-linux-ray > ~/.bashrc
