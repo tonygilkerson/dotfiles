@@ -2,6 +2,7 @@
 
 This document contains infomration on how to setup a new workstation. It assumes Ubuntu.
 
+See install instruction for [ghostty](https://ghostty.org/docs/install/binary)
 
 ```sh
 # Generate ssh key and accept default location of ~/.ssh/id_ed25519
