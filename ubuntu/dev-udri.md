@@ -64,3 +64,35 @@ cd ~/Downloads
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
+
+## VS Code
+
+Customize keybindings in VS Code
+
+* Open the Command Palette in VS Code by pressing Ctrl+Shift+P.
+* Type Open Keyboard Shortcuts (JSON) and select the corresponding option. This will open your keybindings.json file in the editor.
+* Add the following keybinding rules to the list in the keybindings.json file. This is the most effective solution, as it allows for context-sensitive behavior.
+
+```json
+// Place your key bindings in this file to override the defaults.
+[
+    {
+        "key": "ctrl+c",
+        "command": "workbench.action.terminal.copySelection",
+        "when": "terminalFocus && terminalTextSelected"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u0003"
+        },
+        "when": "terminalFocus && !terminalTextSelected"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "workbench.action.terminal.paste",
+        "when": "terminalFocus"
+    }
+]
+```
