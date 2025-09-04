@@ -22,16 +22,33 @@ git config --global user.email "tony.gilkerson@udri.udayton.edu"
 # cat ~/.ssh/id_ed25519.pub
 cat ~/.ssh/id_ecdsa.pub
 
+#
+# apt
+#
+sudo apt update
+sudo apt install tree
+sudo apt install gnome-tweak-tool
+
+#
+# Steps to install gcloud on Ubuntu:
+#
+sudo apt install apt-transport-https ca-certificates gnupg
+sudo apt install ca-certificates gnupg
+# immport the Google Cloud public key
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+# Add the Google Cloud SDK source to your apt sources list:
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt update && sudo apt install google-cloud-cli
+gcloud init
+
+#
 # Install homebrew
+#
 sudo apt update
 sudo apt install build-essential git -y
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Gnome Tweaks
-sudo apt install gnome-tweak-tool
 
-# chrome
-sudo apt install .
 #
 # Brew
 #
