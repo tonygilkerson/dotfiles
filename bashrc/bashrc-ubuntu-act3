@@ -223,5 +223,5 @@ export GPG_TTY=$(tty)
 #
 # point to InfoList data file
 #
-export INFOLIST_DATA=/home/tgilkerson/gitlab-dle/anthony.gilkerson/notebook/infolist/infolist-data-rs.yaml
+export INFOLIST_DATA=/home/tgilkerson/gitlab-dle/anthony.gilkerson/notebook/infolist/infolist-data.yaml
 
