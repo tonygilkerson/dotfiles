@@ -28,7 +28,7 @@ cat ~/.ssh/id_ecdsa.pub
 sudo apt update
 sudo apt install tree
 sudo apt install gnome-tweak-tool
-
+sudo apt install podman
 #
 # Steps to install gcloud on Ubuntu:
 #
