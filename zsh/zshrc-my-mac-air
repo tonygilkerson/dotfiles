@@ -97,5 +97,10 @@ export INFOLIST_DATA="/Users/tonygilkerson/github/tonygilkerson/infolist/infolis
 # Needed to point dagger cli at engine running in the cluster
 # ref: https://docs.dagger.io/configuration/custom-runner
 #
-DAGGER_ENGINE_POD=$(kubectl -n dagger get pods -l name=dagger-engine -o custom-columns=":metadata.name"  --no-headers)
-export _EXPERIMENTAL_DAGGER_RUNNER_HOST="kube-pod://${DAGGER_ENGINE_POD}?namespace=dagger&container=dagger-engine"
+#DAGGER_ENGINE_POD=$(kubectl -n dagger get pods -l name=dagger-engine -o custom-columns=":metadata.name"  --no-headers)
+#export _EXPERIMENTAL_DAGGER_RUNNER_HOST="kube-pod://${DAGGER_ENGINE_POD}?namespace=dagger&container=dagger-engine"
+
+#
+# direnv hooks
+#
+eval "$(direnv hook zsh)"
