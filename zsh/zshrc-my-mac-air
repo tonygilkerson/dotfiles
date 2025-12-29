@@ -77,6 +77,11 @@ PROMPT='%F{green}%~%f%F{red}$(get_prompt_extras)%f $ '
 # Path
 #
 
+#
+# Python
+#
+export PATH="/Users/tonygilkerson/Library/Python/3.9/bin:$PATH"
+
 # Krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
