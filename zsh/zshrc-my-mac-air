@@ -81,14 +81,6 @@ PROMPT='%F{green}%~%f%F{red}$(get_prompt_extras)%f $ '
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 #
-# Add python library to my path
-# This is mainly for infolist which I installed like this:
-#   pip3 install /path/infolist.whl --break-system-packages --user
-#
-# I assume when I upgrade Python I will need to update this
-export PATH="/Users/tonygilkerson/Library/Python/3.13/bin:$PATH"
-
-#
 # Infolist
 #
 export INFOLIST_DATA="/Users/tonygilkerson/github/tonygilkerson/infolist/infolist-prod.yaml"
