@@ -211,6 +211,11 @@ PROMPT_COMMAND='PS1="$(get_host)\w $(get_venv)$(parse_git_branch)\n\$ "'
 # fi
 
 #
+# krew plugins
+#
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+#
 # BREW - Export env vars and add brew to the path
 #
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
